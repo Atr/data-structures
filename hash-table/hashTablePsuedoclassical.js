@@ -2,15 +2,15 @@
 // ...
 // Hash Table has an array of 'buckets' - a bucket at each index of the array.
 // This array is called storage.
-// Each bucket is an array itself (or a linked list - linked list probably more efficient...
-// ...but implementing with array for simplicity).
-// Each item in the bucket will be a tuple, where t[0] is key and t[1] is value.
+// Each bucket in storage is an array itself (or a linked list - linked list probably more efficient...
+// ...but implementing with array for simplicity here).
+// The bucket will contain items.
+// Each item in the bucket will be a tuple, where t[0] is a key and t[1] is a value.
 // When inserting a key-value pair into the hash table...
-// ...you'll run the key through a hashing function that determines at which 'bucket'...
-// ...in storage that key-value pair should live.  You then insert the key-value pair...
-// ...as a tuple at that index. 
+// ...you'll run the key through a hashing function that determines at which index in storage...
+// aka at which 'bucket' in storage, that key-value pair should live.  You then insert...
+// the key-value pair as a tuple in the bucket that lives at that index. 
 // As long as you re-size the hash-table, this data structure will provide constant time lookup.
-
 
 
 // Do not use the typical bracket notation for arrays 
@@ -18,7 +18,7 @@
 // Also note!  To run the below code, you'd need to import hashTableHelpers.js
 
 const HashTable = function() {
-  // Arbitrary value for limit (to start..);
+  // Arbitrary value for limit (to start..).  Currently I haven't implemented resizing.
   this._limit = 8;
   this._storage = LimitedArray(this._limit);
 };
