@@ -6,10 +6,8 @@ class Queue {
   }
 
   enqueue(val) {
-    if (val && typeof val !== 'function') {
-      this.storage[this.numItems] = val;
-      this.numItems++;
-    }
+    this.storage[this.numItems] = val;
+    this.numItems++;
   }
 
   dequeue() {
